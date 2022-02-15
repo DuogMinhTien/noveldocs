@@ -5,6 +5,7 @@ const $$ = document.querySelectorAll.bind (document);
 
 const Content = $("#content");
 const titleChap = $("#titleChap");
+const countWord = $("#countWord");
 
 const DSChuong = ["Chương 1: Đấu Với Trời, Kỳ Nhạc Vô Tận",
                 "Chương 2: Hảo Vận", 
@@ -12,6 +13,30 @@ const DSChuong = ["Chương 1: Đấu Với Trời, Kỳ Nhạc Vô Tận",
                 "Chương 4: Mở Cửa Đại Cát", 
                 "Chương 5: Đại Thần Tiếu Thương Thiên Trâu Bò", 
                 "Chương 6: Vận Khí Vô Địch!",
+                "Chương 7: Vạn Sự Thuận Lợi! Thoải Mái!",
+                "Chương 8: Hơn 3000 Tấm Hình",
+                "Chương 9: Bản Thảo【Thôn Phệ Tinh Không】",
+                "Chương 10: 4 Tệ Mua 12 Chai Bia",
+                "Chương 11: Dự Định Xông Bảng",
+                "Chương 12: Phi Thường Không May",
+                "Chương 13: Việc Này Có Quỷ Dị",
+                "Chương 14: Cái Kịch Bản Này Không Đúng Rồi!",
+                "Chương 15: Uy Lực Chân Chính Của Phi Thường Không May!",
+                "Chương 16: Giá Trị!",
+                "Chương 17: Gặp Lại Người Quen",
+                "Chương 18: Nhâm Tính Có Tiền",
+                "Chương 19: Hạo Ca! Thu Tiểu Đệ Được Không?!",
+                "Chương 20: Người Đây Là Nghĩ Đi Đâu Vậy?!",
+                "Chương 21: Nữ Nhân Này Đến Cùng Là Có Lai Lịch Gì?",
+                "Chương 22: Người Máy Quản Gia",
+                "Chương 23: Vẫn Chưa Thỏa Mãn Nha!",
+                "Chương 24: Siêu Cấp Thần Cơ Bảy Sao",
+                "Chương 25: Tạ Ơn Nhật Thiên Ca!",
+                "Chương 26: Cái Này Gay Cấn!",
+                "Chương 27: Thân Phận Chân Chính Của Nữ Nhân Kia!",
+                "Chương 28: Đến Trước Mặt Ta Tỏ Ra Ưu Tú Siêu Việt?",
+                "Chương 29: Kịch Bản Của Thế Giới Này Làm Ta Cảm Thấy Lo Lắng!",
+                "Chương 30: Cực Phẩm Kịch Bản",
             ];
 
 const ChapNext = $$(".ChapNext");
@@ -87,6 +112,7 @@ function getData () {
 function AddChap (text) {
     Content.textContent = text;
     titleChap.textContent = DSChuong[SttNow-1];
+    countWord.innerHTML = "Số chữ: " + text.split(" ").length;
 }
 
 
