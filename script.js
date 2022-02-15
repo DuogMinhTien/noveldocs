@@ -57,6 +57,8 @@ const DSChuong = ["Chương 1: Đấu Với Trời, Kỳ Nhạc Vô Tận",
                 "Chương 48: Chiến Đấu Đến Cùng!",
                 "Chương 49: Ai Mới Không Cần Mặt?",
                 "Chương 50: Chờ Ngày Ca Đạt Được Hảo Vận, Cũng Chính Là Thời Điểm Ngươi Bị Vùi Dập Giữa Chợ!",
+                "Chương 51: Nhìn Xem Người Ta Rất Biết Điều Nha!",
+                "Chương 52: Rất Có Khí Chất!",
             ];
 
 const ChapNext = $$(".ChapNext");
