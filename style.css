@@ -1,0 +1,120 @@
+:root {
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+}
+
+* {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+body {
+    background-color: #242729;
+    overflow-x: hidden;
+    padding: 0 10px !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+#titleChap {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: white;
+    margin: 20px 30px;
+}
+
+#nameNovel {
+    font-size: 2.2rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-shadow: 0 0 10px orange;
+    margin-left: 15px;
+}
+
+#content {
+    color: white;
+    font-size: 1.2rem;
+    white-space: pre-line;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 30px;
+    margin-bottom: 30px;
+}
+
+.MoveButton {
+    width: 100vw;
+    display: flex;
+}
+
+.MoveChap {
+    background-color: #29b6f6;
+    color: white;
+    border: none;
+    width: 42vw;
+    margin: 5px;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+}
+
+.BlockMove {
+    background-color: #ccc;
+    color: black;
+}
+
+#chooseChap {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+  /* Remove IE arrow */
+#chooseChap::-ms-expand {
+    display: none;
+}
+  /* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 85vw;
+    height: 3em;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0 20px;
+    margin-left: 5px;
+}
+  /* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+    color: whitesmoke;
+}
+  /* Transition */
+.select:hover::after {
+    color: #f39c12;
+}
