@@ -11,13 +11,14 @@
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
 body {
     background-color: #242729;
     overflow-x: hidden;
-    padding: 0 10px !important;
     -webkit-font-smoothing: antialiased;
+    justify-content: center;
 }
 
 body::-webkit-scrollbar {
@@ -34,29 +35,33 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #titleChap {
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.8rem;
     color: white;
-    margin: 20px 30px;
+    margin: 20px 0;
 }
 
 #nameNovel {
     font-size: 2.2rem;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-shadow: 0 0 10px orange;
-    margin-left: 15px;
+}
+
+#contentDiv {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #content {
     color: white;
     font-size: 1.2rem;
     white-space: pre-line;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0 30px;
+    font-family: Lora, serif;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .MoveButton {
@@ -68,14 +73,17 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #29b6f6;
     color: white;
     border: none;
-    width: 42vw;
-    margin: 5px;
+    width: 40%;
     border-radius: 10px;
-    height: 40px;
+    min-height: 40px;
     font-size: 1.2rem;
     cursor: pointer;
-    font-weight: bold;
     outline: none;
+    padding: 10px;
+}
+
+.ChapPre {
+    margin-right: 10px;
 }
 
 .BlockMove {
@@ -86,7 +94,6 @@ body::-webkit-scrollbar-thumb:hover {
 #countWord {
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 45px;
     font-style: italic;
     text-decoration: underline;
 }
@@ -116,12 +123,11 @@ body::-webkit-scrollbar-thumb:hover {
 .select {
     position: relative;
     display: flex;
-    width: 85vw;
+    width: 100%;
     height: 3em;
     border-radius: 10px;
     overflow: hidden;
     margin: 15px 0 20px;
-    margin-left: 5px;
 }
   /* Arrow */
 .select::after {
@@ -138,4 +144,17 @@ body::-webkit-scrollbar-thumb:hover {
   /* Transition */
 .select:hover::after {
     color: #f39c12;
+}
+
+@media only screen and (max-width: 750px) {
+    #content {
+        margin: 0 5px;
+    }
+    #contentDiv {
+        width: 85vw;
+        position: relative;
+        margin: 0 10px;
+        transform: translateX(0);
+        left: 0;
+    }
 }
