@@ -142,10 +142,10 @@ function AddChap (text) {
         Content.removeChild(Content.lastChild);
     }
     titleChap.textContent = DSChuong[SttNow-1];
-    let arrTextLB = text.split (";")
+    let arrTextLB = text.split ("###")
     for (let i=arrTextLB.length-1; i>=0; i--) {
         let tagRDLet = tagRandom[Math.floor (Math.random()*tagRandom.length)];
-        Content.insertAdjacentHTML ("afterbegin","<"+tagRDLet+" style='position: relative; color: white'>"+arrTextLB[i]+";</"+tagRDLet+">");
+        Content.insertAdjacentHTML ("afterbegin","<"+tagRDLet+" style='position: relative; color: white'>"+arrTextLB[i]+"</"+tagRDLet+">");
     }
     countWord.innerHTML = "Số chữ: " + (text.split("&#32;")).length;
     setTimeout ("loading.style.display = 'none'",1000);
