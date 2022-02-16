@@ -6,6 +6,7 @@ const $$ = document.querySelectorAll.bind (document);
 const Content = $("#content");
 const titleChap = $("#titleChap");
 const countWord = $("#countWord");
+const loading = $("#loading");
 
 const DSChuong = ["Chương 1: Đấu Với Trời, Kỳ Nhạc Vô Tận",
                 "Chương 2: Hảo Vận", 
@@ -128,18 +129,27 @@ function ScrollToStop () {
 
 function getData () {
     ScrollToStop ();
+    loading.style.display = "";
     fetch ('Chuong/chuong'+SttNow+'.txt')
         .then(response => response.text()).then(text => AddChap(text));
 }
 
-
+var tagRandom = ["margriok","verpola","xioapli","dicaotp","tapopip"];
 
 function AddChap (text) {
-    Content.textContent = text;
+    //Content.innerHTML = text;
+    while (Content.firstChild) {
+        Content.removeChild(Content.lastChild);
+    }
     titleChap.textContent = DSChuong[SttNow-1];
-    countWord.innerHTML = "Số chữ: " + text.split(" ").length;
+    let arrTextLB = text.split (";")
+    for (let i=arrTextLB.length-1; i>=0; i--) {
+        let tagRDLet = tagRandom[Math.floor (Math.random()*tagRandom.length)];
+        Content.insertAdjacentHTML ("afterbegin","<"+tagRDLet+" style='position: relative; color: white'>"+arrTextLB[i]+";</"+tagRDLet+">");
+    }
+    countWord.innerHTML = "Số chữ: " + (text.split("&#32;")).length;
+    setTimeout ("loading.style.display = 'none'",1000);
 }
-
 
 window.onload = function () {
     document.addEventListener("contextmenu", function (e) {
